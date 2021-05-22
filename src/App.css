@@ -1,38 +1,34 @@
-.App {
-  text-align: center;
+*{
+  background-color: rgb(24, 66, 104);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.includes{
+  background-color: black;
+  color: whitesmoke;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.doesntInclude{
+  background-color: whitesmoke;
+  color: black;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+textarea{
+  width: 70vw;
+  height: 30vw;
 }
-
-.App-link {
-  color: #61dafb;
+.includesNumbers{
+  background-color: #f8ed56;
+  color: #f8566b;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.din{
+  background-color: #4dddab;
+  color: #4d80dd;
+}
+.includesLowerCase > textarea{
+  font-family: 'Courier New', Courier, monospace;
+}
+.dil > textarea{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 2vw;
+}
+.asterisks > div > textarea{
+  font-family: serif;
+  font-style: oblique;
 }

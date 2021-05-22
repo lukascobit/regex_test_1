@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React, {useState} from 'react'
 import './App.css';
 
 function App() {
+
+  const [inputValue, setInputValue] = useState('');
+  const regex = /t/gi;
+  const regexNumbers = /[1-9]/gi;
+  const upperCaseRegex = /[a-z]/g
+  const asteriskRegex = /^\*.*\*$/g
+
+  function Changed(e){
+    setInputValue(e.target.value)
+    
+  }
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className={regexNumbers.test(inputValue) ? "includesNumbers" : "din"}>test</h1>
+      <div className={asteriskRegex.test(inputValue) ? "asterisks" : ""}>
+        <div className={upperCaseRegex.test(inputValue) ? "includesLowerCase" : "dil"}>
+          <textarea 
+          className={regex.test(inputValue) ? "includes" : "doesntInclude"} 
+          onChange={Changed}
+          value={inputValue}
+          placeholder="if this text includes letter 't' it will turn black"/>
+        </div>
+      </div>
     </div>
   );
 }
