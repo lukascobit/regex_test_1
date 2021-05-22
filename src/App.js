@@ -8,23 +8,25 @@ function App() {
   const regexNumbers = /[1-9]/gi;
   const upperCaseRegex = /[a-z]/g
   const asteriskRegex = /^\*.*\*$/g
+  const GreenTextRegex = /^>/g
 
   function Changed(e){
     setInputValue(e.target.value)
-    
   }
 
-  
   return (
     <div>
       <h1 className={regexNumbers.test(inputValue) ? "includesNumbers" : "din"}>test</h1>
-      <div className={asteriskRegex.test(inputValue) ? "asterisks" : ""}>
-        <div className={upperCaseRegex.test(inputValue) ? "includesLowerCase" : "dil"}>
-          <textarea 
-          className={regex.test(inputValue) ? "includes" : "doesntInclude"} 
-          onChange={Changed}
-          value={inputValue}
-          placeholder="if this text includes letter 't' it will turn black"/>
+      <div className={GreenTextRegex.test(inputValue) ? "green" : ""}>
+        <div className={asteriskRegex.test(inputValue) ? "asterisks" : ""}>
+          <div className={upperCaseRegex.test(inputValue) ? "includesLowerCase" : "dil"}>
+            <textarea 
+            className={regex.test(inputValue) ? "includes" : "doesntInclude" } 
+            onChange={Changed}
+            value={inputValue}
+            placeholder="if this text includes letter 't' it will turn black"
+            spellCheck="false"/>
+          </div>
         </div>
       </div>
     </div>
