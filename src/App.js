@@ -14,9 +14,7 @@ function App() {
   const dotRegex = /\.$/g
 
   function Changed(e){
-    if(e.target.value){
     setInputValue(e.target.value)
-    }
   }
 
   return (
@@ -55,6 +53,7 @@ function App() {
             <button onClick={Changed} value={inputValue + "?"}>?</button>
 
             <button onClick={Changed} className={dotRegex.test(inputValue) ? "" : "ShouldWriteDot"} value={inputValue + "."}>.</button>
+            <button onClick={Changed} value={""}>CLEAR</button>
           </div>
         </div>
       </div>
